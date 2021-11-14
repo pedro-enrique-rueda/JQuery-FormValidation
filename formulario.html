@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+            crossorigin="anonymous"></script>
+
+    
+    
+    <script>
+        $(document).ready(function(){
+            $("#send").click(function(){
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                var age = $("#age").val();
+                var password = $("#password").val();
+
+                if(firstname == ""){
+                    $("#message").val("dame tu nombre").fadeIn();
+                    return false
+                }
+            });
+
+
+        });
+    </script>
+    
+
+
+    <noscript> Esta pagina no soporta JavaScript</noscript>
+
+</head>
+<body>
+    <h1> Form Implementing JQuery </h1><br><br>
+
+    <div id="contentbox">
+        <form action="/" id="form">
+            <fieldset>
+                <legend> Log In Form </legend><br>
+
+                <label for="firstname"> First Name </label><br>
+                <input type="text" name="firstname" id="firstname" value="words only"><br><br>
+    
+                <label for="lastname"> Last Name </label><br>
+                <input type="text" name="lastname" id="lastname" value="words only"><br><br>
+    
+                <label for="age"> Age </label><br>
+                <input type="number" name="age" id="age" value="18" min="18" max="125"><br><br>
+                
+                <label for="password"> Password </label><br>
+                <input type="password" id="password"><br><br>
+
+                <input type="submit" value="Send" id="send"><br>    
+            </fieldset>
+
+            <div id="message"></div>
+        </form>
+    </div>
+     
+</body>
+</html>
