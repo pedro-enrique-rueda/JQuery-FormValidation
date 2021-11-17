@@ -9,51 +9,8 @@
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
             crossorigin="anonymous"></script>
 
-    <style>
-        .error{
-            width: 100px;
-            height: 20px;
-        }        
-    </style>
-    
-    <script>
-        $(document).ready(function(){
-            $("#send").click(function(){
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                var age = $("#age").val();
-                var password = $("#password").val();
-
-                if(firstname == ""){
-                    $("#errormessage1").text("Type your name");
-                    return false
-                }else{
-                    $("#errormessage1").fadeOut();
-                    if(lastname == ""){
-                        $("#errormessage2").text("Type your last name");
-                        return false
-                    }else{
-                        $("#errormessage2").fadeOut();
-                        if(age == ""){
-                            $("#errormessage3").text("Type your age");
-                            return false
-                        }else{
-                            $("#errormessage3").fadeOut();
-                            if(password == ""){
-                                $("#errormessage4").text("Type your password");
-                                return false
-                            }else{
-                                $("#errormessage4").fadeOut();
-                            }
-                        }
-                    }
-                }
-            });
-
-
-        });
-    </script>
-    
+    <link rel="stylesheet" href="formulario.css">    
+    <script src="formulario.js"></script>
 
 
     <noscript> This web page does not support JavaScript</noscript>
@@ -68,21 +25,21 @@
                 <legend> Log In Form </legend><br>
 
                 <label for="firstname"> First Name </label><br>
-                <input type="text" name="firstname" id="firstname">
+                <input type="text" name="firstname" id="firstname" required autofocus>
                 <div id="errormessage1" class="error"></div><br>
 
                 <label for="lastname"> Last Name </label><br>
-                <input type="text" name="lastname" id="lastname">
+                <input type="text" name="lastname" id="lastname" required>
                 <div id="errormessage2" class="error"></div><br>
     
                 <label for="age"> Age </label><br>
-                <input type="number" name="age" id="age" min="18" max="125">
+                <input type="number" name="age" id="age" min="18" max="125" required>
                 <div id="errormessage3" class="error"></div><br>
                 
                 <label for="password"> Password </label><br>
-                <input type="password" id="password">
+                <input type="password" id="password" required>
                 <div id="errormessage4" class="error"></div><br>
-
+                
                 <input type="submit" value="Send" id="send"><br>    
             </fieldset>
 
